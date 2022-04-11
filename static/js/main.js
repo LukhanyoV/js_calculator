@@ -11,6 +11,12 @@ const buttons = document.querySelectorAll("input"); // oops am selecting the inp
 // add event listener for each button
 buttons.forEach(button => {
     if(button.type === "button"){
+        if(button.value === "DEL"){
+            button.addEventListener("dblclick", () => {
+                formula.innerHTML = "";
+                output.value = "";
+            });
+        }
         button.addEventListener("click", (e) => {
             if(e.target.value !== "=" && e.target.value !== "DEL"){
                 formula.innerHTML = "";
