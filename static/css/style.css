@@ -16,11 +16,20 @@ table {
 
 .display input[type=button]{
     padding: 0;
+    width: 100%;
 }
 
 #formula {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border: 1px solid black;
+    border-bottom: 0;
     height: 40px;
-    width: 210px;
+    line-height: 20px;
+    font-size: medium;
+    width: 216px;
+    text-align: left;
 }
 
 #display {
@@ -29,6 +38,8 @@ table {
     width: 183px;
     font-size: medium;
     line-height: 20px;
+    border-top: 0;
+    border-right: 0;
 }
 
 

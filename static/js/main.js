@@ -13,13 +13,13 @@ buttons.forEach(button => {
     if(button.type === "button"){
         button.addEventListener("click", (e) => {
             if(e.target.value !== "=" && e.target.value !== "DEL"){
-                formula.value = "";
+                formula.innerHTML = "";
                 output.value += e.target.value;
             } else if(e.target.value === "DEL"){
-                formula.value = "";
+                formula.innerHTML = "";
                 output.value = output.value.slice(0, -1);
             } else if(e.target.value === "="){
-                formula.value = output.value;
+                formula.innerHTML = output.value;
                 output.value = output.value !== "" ? evil(output.value) : "";
             };
         });
