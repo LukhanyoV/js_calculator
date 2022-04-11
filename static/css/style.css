@@ -18,6 +18,10 @@ table {
     padding: 0;
 }
 
+#formula {
+    height: 40px;
+}
+
 #display {
     border: 1px solid black;
     height: 40px;

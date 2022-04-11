@@ -1,5 +1,6 @@
 // my useful variables
 const output = document.querySelector("#display");
+const formula = document.querySelector("#formula");
 
 // why use eval when I can use evil
 const evil = f => Function('"use strict";return (' + f + ')')();
@@ -12,10 +13,13 @@ buttons.forEach(button => {
     if(button.type === "button"){
         button.addEventListener("click", (e) => {
             if(e.target.value !== "=" && e.target.value !== "DEL"){
+                formula.value = "";
                 output.value += e.target.value;
             } else if(e.target.value === "DEL"){
+                formula.value = "";
                 output.value = output.value.slice(0, -1);
             } else if(e.target.value === "="){
+                formula.value = output.value;
                 output.value = output.value !== "" ? evil(output.value) : "";
             };
         });
