@@ -6,77 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JS Calculator</title>
     <link rel="stylesheet" href="./static/css/style.css">
+    <link rel="stylesheet" href="./static/grid/simple-grid.css">
 </head>
 <body>
-    <div class="container">
+    <div class="container center">
         <h1>My Basic Calculator</h1>
         <p>Tip: Double click on DEL to clear screen</p>
-        <div id="formula"></div>
-        <div class="display">
-            <input type="text" id="display" readonly>
-            <input type="button" value="DEL">
-        </div>
-        <table>
-            <tbody>
-                <tr>
-                    <td>
+        <div id="calculator" class="center">
+            <div id="title" class="row">
+                <div class="col">
+                    <h5 >&copy; LukhanyoV</h5>
+                </div>
+            </div>
+
+            <div id="screen" class="left">
+                <div id="formula"></div>
+                <div id="display"></div>
+            </div>
+
+            <div class="buttons">
+                <div class="row">
+                    <div class="col-3">
+                        <input type="button" value="C">
+                    </div>
+                    <div class="col-3">
+                        <input type="button" value="DEL">
+                    </div>
+                    <div class="col-3">
+                        <input type="button" value="x^2">
+                    </div>
+                    <div class="col-3">
+                        <input type="button" value="ON">
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-3">
                         <input type="button" value="9">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="8">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="7">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="*">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-3">
                         <input type="button" value="6">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="5">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="4">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="/">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-3">
                         <input type="button" value="3">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="2">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="1">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="+">
-                    </td>
-                </tr>
-                <tr>
-                    <td>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-3">
                         <input type="button" value="0">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value=".">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="=">
-                    </td>
-                    <td>
+                    </div>
+                    <div class="col-3">
                         <input type="button" value="-">
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <p>&copy; LukhanyoV</p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script src="./static/js/main.js"></script>
 </body>

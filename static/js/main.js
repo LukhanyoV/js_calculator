@@ -8,25 +8,31 @@ const evil = f => Function('"use strict";return (' + f + ')')();
 // find my buttons
 const buttons = document.querySelectorAll("input"); // oops am selecting the input[type=text] too
 
+// total 
+let total = "";
+
 // add event listener for each button
 buttons.forEach(button => {
     if(button.type === "button"){
         if(button.value === "DEL"){
             button.addEventListener("dblclick", () => {
+                total = "";
                 formula.innerHTML = "";
-                output.value = "";
+                output.innerHTML = "";
             });
         }
         button.addEventListener("click", (e) => {
-            if(e.target.value !== "=" && e.target.value !== "DEL"){
+            if(e.target.value !== "=" && e.target.value !== "DEL" && e.target.value !== "C" && e.target.value !== "ON" && e.target.value !== "x^2"){
                 formula.innerHTML = "";
-                output.value += e.target.value;
+                total += e.target.value;
+                output.innerHTML = total;
             } else if(e.target.value === "DEL"){
                 formula.innerHTML = "";
-                output.value = output.value.slice(0, -1);
+                total = total.slice(0, -1);
+                output.innerHTML = total;
             } else if(e.target.value === "="){
-                formula.innerHTML = output.value;
-                output.value = output.value !== "" ? evil(output.value) : "";
+                formula.innerHTML = total;
+                output.innerHTML = evil(total);
             };
         });
     };
