@@ -14,15 +14,9 @@ let total = "";
 // add event listener for each button
 buttons.forEach(button => {
     if(button.type === "button"){
-        if(button.value === "DEL"){
-            button.addEventListener("dblclick", () => {
-                total = "";
-                formula.innerHTML = "";
-                output.innerHTML = "";
-            });
-        }
         button.addEventListener("click", (e) => {
             if(e.target.value !== "=" && e.target.value !== "DEL" && e.target.value !== "C" && e.target.value !== "ON" && e.target.value !== "x^2"){
+                
                 formula.innerHTML = "";
                 total += e.target.value;
                 output.innerHTML = total;
@@ -33,7 +27,14 @@ buttons.forEach(button => {
             } else if(e.target.value === "="){
                 formula.innerHTML = total;
                 output.innerHTML = evil(total);
-            };
+            } else if(e.target.value === "x^2"){
+                total += "**2";
+                output.innerHTML = total;
+            } else if(e.target.value === "C"){
+                total = "";
+                formula.innerHTML = "";
+                output.innerHTML = "";
+            }
         });
     };
 });
